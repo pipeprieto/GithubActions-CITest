@@ -25,7 +25,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
       # This is suposed to be the step to execute in order to do the CI
-     - name: Run markdown lint
-          run: |
+      - name: Run markdown lint
+        run: |
               npm install remark-cli remark-preset-lint-consistent
               npx remark . --use remark-preset-lint-consistent --frail
