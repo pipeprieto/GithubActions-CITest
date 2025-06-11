@@ -6,7 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: [ "ci" ]
   pull_request:
     branches: [ "main" ]
 
@@ -24,8 +24,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-
+      # This is suposed to be the step to execute in order to do the CI
      - name: Run markdown lint
-        run: |
-            npm install remark-cli remark-preset-lint-consistent
-            npx remark . --use remark-preset-lint-consistent --frail
+          run: |
+              npm install remark-cli remark-preset-lint-consistent
+              npx remark . --use remark-preset-lint-consistent --frail
